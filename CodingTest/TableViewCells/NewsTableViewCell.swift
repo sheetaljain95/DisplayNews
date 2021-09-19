@@ -51,9 +51,13 @@ class NewsTableViewCell : UITableViewCell {
     func updateCell(news: Article) {
         title.text = news.title
         newsContent.text = news.articleDescription
-        let url = URL(string: news.urlToImage!)
-        let data = try? Data(contentsOf: url!)
-        newsImage!.image = UIImage(data: data!)
+        if (news.urlToImage != nil) {
+            let url = URL(string: news.urlToImage!)
+            let data = try? Data(contentsOf: url!)
+            DispatchQueue.main.async {
+                self.newsImage!.image = UIImage(data: data!)
+            }
+        }
         author.text = news.author
         if (news.author == nil) {
             author.translatesAutoresizingMaskIntoConstraints = false
