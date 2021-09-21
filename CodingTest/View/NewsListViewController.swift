@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+class NewsListViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
-    
+    @IBOutlet var topView: UIView!
     @IBOutlet weak var newTableView: UITableView!
     private var newsViewModel : NewsViewModel!
     private let newscell = "NewsTableViewCell"
@@ -29,6 +29,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         cell.cellNewsURL = self.newsViewModel.newsData?.articles?[indexPath.row].url
         cell.updateCell(news: (self.newsViewModel.newsData?.articles?[indexPath.row])!)
         cell.backgroundColor = .black
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -41,12 +42,22 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: true)
+        createUI()
         uiUpdate()
         let nib = UINib.init(nibName: newscell, bundle: nil)
         self.newTableView.register(nib, forCellReuseIdentifier: newscell)
     }
     
     // MARK: - Methods
+    
+    func createUI(){
+        topView.layer.cornerRadius = 24
+        topView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        view.addSubview(topView)
+        self.view.backgroundColor = .black
+        self.newTableView.backgroundColor = .black
+        self.newTableView.separatorColor = UIColor.black
+    }
     
     func uiUpdate(){
         self.newsViewModel =  NewsViewModel()
@@ -60,9 +71,13 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             self.newTableView.reloadData()
         }
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+          return .lightContent
+    }
 }
 
-extension ViewController: SeeNewsDelegate {
+extension NewsListViewController: SeeNewsDelegate {
         func didTapButton(newsTitle: String?, newsURL: String?) {
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewsWebViewController") as? NewsWebViewController
         vc!.newsTitle = newsTitle!

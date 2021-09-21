@@ -12,15 +12,26 @@ import CoreData
 class CoreDataModel : NSObject {
     
     private var newsViewModel : NewsViewModel!
+
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    func createData() {
-        guard let appDelegate = UIApplication.shared.delegate as! AppDelegate? else {return}
+    func createData(news: Array<Any>) {
         let managedContext = appDelegate.persistentContainer.viewContext
         let newsEntity = NSEntityDescription.entity(forEntityName: "NewsArticle", in: managedContext)!
-        
-        for i in 1...5 {
-            let news = NSManagedObject(entity: newsEntity, insertInto: managedContext)
-            //news.setValue(<#T##value: Any?##Any?#>, forKey: <#T##String#>)
+        var id = 1
+        for item in news {
+            let entry = item as? Article
+            let newsObject = NSManagedObject(entity: newsEntity, insertInto: managedContext)
+            newsObject.setValue(entry?.author, forKey: "author")
+            newsObject.setValue(entry?.articleDescription, forKey: "articleDescription")
+            newsObject.setValue(entry?.publishedAt, forKey: "publishedAt")
+            newsObject.setValue(entry?.title, forKey: "title")
+            newsObject.setValue(entry?.url, forKey: "url")
+            newsObject.setValue(entry?.urlToImage, forKey: "urlToImage")
+            newsObject.setValue(entry?.content, forKey: "content")
+            newsObject.setValue(id, forKey: "id")
+            id = id + 1
+
         }
         do {
             try managedContext.save()
@@ -30,24 +41,71 @@ class CoreDataModel : NSObject {
         }
     }
     
-    func retreiveData(){
-        guard let appDelegate = UIApplication.shared.delegate as! AppDelegate? else {return}
+    func retreiveDataWithID() -> NewsCoreData? {
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "NewsArticle")
+        var latestRecord : NewsCoreData!
+        fetchRequest.predicate = NSPredicate(
+            format: "id = 1"
+        )
+        do {
+            let result = try managedContext.fetch(fetchRequest)
+            for data in result as! [NSManagedObject] {
+                let publishedAt = data.value(forKey: "publishedAt") as? String
+                let author = data.value(forKey: "author") as? String
+                let title = data.value(forKey: "title") as? String
+                let articleDescription = data.value(forKey: "articleDescription") as? String
+                let url = data.value(forKey: "url") as? String
+                let urlToImage = data.value(forKey: "urlToImage") as? String
+                let content = data.value(forKey: "title") as? String
+                let id = data.value(forKey: "id") as? Int
+
+                latestRecord = NewsCoreData(author: author, title: title, articleDescription: articleDescription, url: url, urlToImage: urlToImage, publishedAt: publishedAt, content: content, id: id)
+            }
+        }
+        catch {
+            print("Failed")
+        }
+        return latestRecord
+    }
+    
+    func retreiveData() -> [NewsCoreData]{
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "NewsArticle")
         do {
             let result = try managedContext.fetch(fetchRequest)
             for data in result as! [NSManagedObject] {
+                let publishedAt = data.value(forKey: "publishedAt") as? String
+                let author = data.value(forKey: "author") as? String
+                let title = data.value(forKey: "title") as? String
+                let articleDescription = data.value(forKey: "articleDescription") as? String
+                let url = data.value(forKey: "url") as? String
+                let urlToImage = data.value(forKey: "urlToImage") as? String
+                let content = data.value(forKey: "title") as? String
+                let id = data.value(forKey: "id") as? Int
+
+                let dataToAppend = NewsCoreData(author: author, title: title, articleDescription: articleDescription, url: url, urlToImage: urlToImage, publishedAt: publishedAt, content: content, id: id)
+                coreDataArray.append(dataToAppend)
                 
             }
         } catch {
-            print("failed")
+            print("Failed")
         }
+        return coreDataArray
     }
     
     func deleteData(){
-        guard let appDelegate = UIApplication.shared.delegate as! AppDelegate? else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "NewsArticle")
-        //fetchRequest.predicate = NSPredicate
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        do
+               {
+                try managedContext.execute(deleteRequest)
+                try managedContext.save()
+               }
+        catch
+        {
+            print ("There was an error")
+        }
     }
 }

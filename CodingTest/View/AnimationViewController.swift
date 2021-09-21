@@ -67,8 +67,12 @@ class AnimationViewController: UIViewController, ButtonTappedDelegate {
         animationView.layer.cornerRadius = 6
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+          return .darkContent
+    }
+    
     func didTapButton() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

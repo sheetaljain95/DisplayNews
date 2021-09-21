@@ -39,11 +39,7 @@ class NewsTableViewCell : UITableViewCell {
         createUI()
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-    }
-    
+  
     func createUI(){
         newsView.backgroundColor = UIColor.darkGray
         newsView.layer.cornerRadius = 5
@@ -60,6 +56,7 @@ class NewsTableViewCell : UITableViewCell {
         fullNews.titleLabel?.font =  UIFont.boldSystemFont(ofSize: 14.0)
         newsImage.contentMode = .scaleAspectFill
         newsImage.layer.cornerRadius = 5
+
     }
     
     func updateCell(news: Article) {

@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--News List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="CodingTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsListViewController" id="BYZ-38-t0r" customClass="NewsListViewController" customModule="CodingTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,10 +20,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="128"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dh7-ip-baM">
-                                        <rect key="frame" x="16" y="16" width="40" height="40"/>
+                                        <rect key="frame" x="16" y="16" width="32" height="32"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="KYS-Lo-Oim"/>
-                                            <constraint firstAttribute="width" constant="40" id="S3U-MK-Za0"/>
+                                            <constraint firstAttribute="height" constant="32" id="KYS-Lo-Oim"/>
+                                            <constraint firstAttribute="width" constant="32" id="S3U-MK-Za0"/>
                                         </constraints>
                                         <inset key="titleEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                                         <state key="normal" title="Button" image="close.png"/>
@@ -31,9 +31,21 @@
                                             <action selector="closeButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iqg-nx-gqc"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's The Buzz" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QL2-ud-AsZ">
+                                        <rect key="frame" x="14" y="64" width="120" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="JC7-PM-cUv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.039215686274509803" green="0.10980392156862745" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="QL2-ud-AsZ" firstAttribute="top" secondItem="dh7-ip-baM" secondAttribute="bottom" constant="16" id="1he-zU-mb6"/>
+                                    <constraint firstItem="QL2-ud-AsZ" firstAttribute="leading" secondItem="SZA-lH-iqC" secondAttribute="leading" constant="14" id="5xN-a2-Ihx"/>
+                                    <constraint firstAttribute="bottom" secondItem="QL2-ud-AsZ" secondAttribute="bottom" constant="16" id="N5g-9H-rXZ"/>
                                     <constraint firstItem="dh7-ip-baM" firstAttribute="top" secondItem="SZA-lH-iqC" secondAttribute="top" constant="16" id="OhA-Hk-5iA"/>
                                     <constraint firstItem="dh7-ip-baM" firstAttribute="leading" secondItem="SZA-lH-iqC" secondAttribute="leading" constant="16" id="ROt-to-TAl"/>
                                     <constraint firstAttribute="height" constant="128" id="zkl-ig-9W9"/>
@@ -42,16 +54,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BKn-eN-tfF">
                                 <rect key="frame" x="0.0" y="172" width="414" height="690"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsTableViewCell" id="hVM-o9-Rru">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hVM-o9-Rru" id="7Gv-kX-kWn">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="O77-zr-VGH"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="c21-4I-Gix"/>
@@ -73,11 +75,12 @@
                     <navigationItem key="navigationItem" id="hEG-Qf-wwu"/>
                     <connections>
                         <outlet property="newTableView" destination="BKn-eN-tfF" id="bl2-oO-OlH"/>
+                        <outlet property="topView" destination="SZA-lH-iqC" id="NwL-SH-Wht"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4306" y="80"/>
+            <point key="canvasLocation" x="4305.7971014492759" y="79.6875"/>
         </scene>
         <!--NewsWebViewController-->
         <scene sceneID="BOT-u5-bXD">
@@ -91,10 +94,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="128"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ga1-fG-rZe">
-                                        <rect key="frame" x="16" y="0.0" width="40" height="40"/>
+                                        <rect key="frame" x="16" y="0.0" width="32" height="32"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Fn4-ef-vFv"/>
-                                            <constraint firstAttribute="width" constant="40" id="eyh-RS-MOY"/>
+                                            <constraint firstAttribute="height" constant="32" id="Fn4-ef-vFv"/>
+                                            <constraint firstAttribute="width" constant="32" id="eyh-RS-MOY"/>
                                         </constraints>
                                         <inset key="titleEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                                         <state key="normal" title="Button" image="close.png"/>
@@ -103,7 +106,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ttile" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FzQ-Gk-25T">
-                                        <rect key="frame" x="16" y="48" width="382" height="72"/>
+                                        <rect key="frame" x="16" y="40" width="382" height="72"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="72" id="HJl-nf-qTL"/>
                                         </constraints>

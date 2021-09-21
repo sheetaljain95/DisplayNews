@@ -31,10 +31,14 @@ class NewsWebViewController: UIViewController {
         let request = URLRequest(url: link)
         newsWebView.load(request)
     }
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+          return .lightContent
+    }
     func createUI() {
         newstitle.font = UIFont.systemFont(ofSize: 14.0)
         newstitle.textColor = .white
+        newsWebView.backgroundColor = .black
+        self.view.backgroundColor = .black
     }
     
 }
