@@ -88,10 +88,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J6F-mS-dud">
-                                <rect key="frame" x="0.0" y="44" width="414" height="104"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="128"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ga1-fG-rZe">
-                                        <rect key="frame" x="16" y="16" width="40" height="40"/>
+                                        <rect key="frame" x="16" y="0.0" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Fn4-ef-vFv"/>
                                             <constraint firstAttribute="width" constant="40" id="eyh-RS-MOY"/>
@@ -102,10 +102,10 @@
                                             <action selector="closeButtonClicked:" destination="MX4-RR-UQx" eventType="touchUpInside" id="fOs-35-Fmt"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ttile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FzQ-Gk-25T">
-                                        <rect key="frame" x="16" y="72" width="382" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ttile" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FzQ-Gk-25T">
+                                        <rect key="frame" x="16" y="48" width="382" height="72"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="24" id="HJl-nf-qTL"/>
+                                            <constraint firstAttribute="height" constant="72" id="HJl-nf-qTL"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -115,18 +115,18 @@
                                 <color key="backgroundColor" red="0.039215686270000001" green="0.10980392160000001" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="FzQ-Gk-25T" secondAttribute="trailing" constant="16" id="Eob-Ea-2jk"/>
-                                    <constraint firstItem="Ga1-fG-rZe" firstAttribute="top" secondItem="J6F-mS-dud" secondAttribute="top" constant="16" id="Mlc-Lb-PFP"/>
-                                    <constraint firstItem="FzQ-Gk-25T" firstAttribute="top" secondItem="Ga1-fG-rZe" secondAttribute="bottom" constant="16" id="dnT-VC-MTh"/>
+                                    <constraint firstItem="Ga1-fG-rZe" firstAttribute="top" secondItem="J6F-mS-dud" secondAttribute="top" id="Mlc-Lb-PFP"/>
+                                    <constraint firstItem="FzQ-Gk-25T" firstAttribute="top" secondItem="Ga1-fG-rZe" secondAttribute="bottom" constant="8" id="dnT-VC-MTh"/>
                                     <constraint firstItem="Ga1-fG-rZe" firstAttribute="leading" secondItem="J6F-mS-dud" secondAttribute="leading" constant="16" id="oeD-9F-HSq"/>
-                                    <constraint firstAttribute="height" constant="104" id="s1z-kY-5I9"/>
+                                    <constraint firstAttribute="height" constant="128" id="s1z-kY-5I9"/>
                                     <constraint firstItem="FzQ-Gk-25T" firstAttribute="leading" secondItem="J6F-mS-dud" secondAttribute="leading" constant="16" id="z6v-hS-AIE"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x6H-9n-Hzy">
-                                <rect key="frame" x="0.0" y="148" width="414" height="714"/>
+                                <rect key="frame" x="0.0" y="172" width="414" height="690"/>
                                 <subviews>
                                     <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SrM-tC-G25">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="714"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="690"/>
                                         <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <wkWebViewConfiguration key="configuration">
                                             <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
