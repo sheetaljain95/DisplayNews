@@ -7,6 +7,7 @@
 
 import UIKit
 import Foundation
+import SDWebImage
 
 protocol SeeNewsDelegate {
     func didTapButton(newsTitle: String?, newsURL: String?)
@@ -65,12 +66,10 @@ class NewsTableViewCell : UITableViewCell {
         title.text = news.title
         newsContent.text = news.articleDescription
         if (news.urlToImage != nil) {
-            let url = URL(string: news.urlToImage!)
-            let data = try? Data(contentsOf: url!)
-            DispatchQueue.main.async {
-                self.newsImage!.image = UIImage(data: data!)
-            }
-        }
+            self.newsImage.sd_setImage(with: URL(string: news.urlToImage!))
+        } else {
+            newsImage.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint(item: newsImage!, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 0).isActive = true        }
         author.text = news.author
         if (news.author == nil) {
             author.translatesAutoresizingMaskIntoConstraints = false
