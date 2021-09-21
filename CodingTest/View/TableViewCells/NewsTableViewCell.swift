@@ -6,11 +6,17 @@
 //
 
 import UIKit
+import Foundation
+
+protocol SeeNewsDelegate {
+    func didTapButton(newsTitle: String?, newsURL: String?)
+}
 
 class NewsTableViewCell : UITableViewCell {
     
+    
     // MARK: - Outlets
-
+    
     @IBOutlet var title: UILabel!
     @IBOutlet var fullNews: UIButton!
     @IBOutlet var newsContent: UILabel!
@@ -18,7 +24,14 @@ class NewsTableViewCell : UITableViewCell {
     @IBOutlet var author: UILabel!
     @IBOutlet var newsView: UIView!
     
+    var cellNewsTitle : String?
+    var cellNewsURL : String?
+    var delegate: SeeNewsDelegate!
+
     // MARK: - Methods
+    @IBAction func seeFullNews(_ sender: Any) {
+        delegate.didTapButton(newsTitle: cellNewsTitle, newsURL: cellNewsURL)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

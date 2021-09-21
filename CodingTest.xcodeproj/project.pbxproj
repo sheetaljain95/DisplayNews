@@ -13,7 +13,7 @@
 		6E42736526F6159A00DAE9F9 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E42736426F6159A00DAE9F9 /* NewsTableViewCell.swift */; };
 		6E42737326F658E300DAE9F9 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E42737226F658E300DAE9F9 /* close.png */; };
 		6E6448F226F5D0C700030087 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6448F126F5D0C700030087 /* AppDelegate.swift */; };
-		6E6448F626F5D0C700030087 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6448F526F5D0C700030087 /* ViewController.swift */; };
+		6E6448F626F5D0C700030087 /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6448F526F5D0C700030087 /* NewsListViewController.swift */; };
 		6E6448F926F5D0C700030087 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E6448F726F5D0C700030087 /* Main.storyboard */; };
 		6E6448FC26F5D0C700030087 /* CodingTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E6448FA26F5D0C700030087 /* CodingTest.xcdatamodeld */; };
 		6E6448FE26F5D0CA00030087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E6448FD26F5D0CA00030087 /* Assets.xcassets */; };
@@ -21,6 +21,11 @@
 		6E64490C26F5D0CA00030087 /* CodingTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E64490B26F5D0CA00030087 /* CodingTestTests.swift */; };
 		6E64491726F5D0CA00030087 /* CodingTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E64491626F5D0CA00030087 /* CodingTestUITests.swift */; };
 		6E64493026F5D29D00030087 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E64492F26F5D29D00030087 /* NewsModel.swift */; };
+		6E67228C26F711AC001D79EA /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E67228B26F711AC001D79EA /* CoreDataModel.swift */; };
+		6E67229426F77181001D79EA /* NewsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E67229326F77181001D79EA /* NewsWebViewController.swift */; };
+		6E67229D26F79F5F001D79EA /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E67229C26F79F5F001D79EA /* AnimationViewController.swift */; };
+		6E6722BA26F7CC66001D79EA /* DisplayListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6722B926F7CC66001D79EA /* DisplayListView.swift */; };
+		6E6722BF26F7CC84001D79EA /* DisplayListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E6722BE26F7CC84001D79EA /* DisplayListView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +53,7 @@
 		6E42737226F658E300DAE9F9 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		6E6448EE26F5D0C700030087 /* CodingTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodingTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E6448F126F5D0C700030087 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6E6448F526F5D0C700030087 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6E6448F526F5D0C700030087 /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
 		6E6448F826F5D0C700030087 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E6448FB26F5D0C700030087 /* CodingTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CodingTest.xcdatamodel; sourceTree = "<group>"; };
 		6E6448FD26F5D0CA00030087 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,6 +66,11 @@
 		6E64491626F5D0CA00030087 /* CodingTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingTestUITests.swift; sourceTree = "<group>"; };
 		6E64491826F5D0CA00030087 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E64492F26F5D29D00030087 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		6E67228B26F711AC001D79EA /* CoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
+		6E67229326F77181001D79EA /* NewsWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWebViewController.swift; sourceTree = "<group>"; };
+		6E67229C26F79F5F001D79EA /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
+		6E6722B926F7CC66001D79EA /* DisplayListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayListView.swift; sourceTree = "<group>"; };
+		6E6722BE26F7CC84001D79EA /* DisplayListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayListView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,11 +139,10 @@
 			isa = PBXGroup;
 			children = (
 				6E42737126F6588C00DAE9F9 /* Images */,
-				6E42735E26F6153500DAE9F9 /* TableViewCells */,
-				6E64492B26F5D13C00030087 /* Controllers */,
-				6E64492A26F5D0E600030087 /* API Service */,
-				6E64492926F5D0E300030087 /* ViewModels */,
 				6E64492826F5D0DF00030087 /* Models */,
+				6E64492B26F5D13C00030087 /* View */,
+				6E64492926F5D0E300030087 /* ViewModels */,
+				6E64492A26F5D0E600030087 /* API Service */,
 				6E64492726F5D0DC00030087 /* Common */,
 				6E6448F726F5D0C700030087 /* Main.storyboard */,
 				6E6448FD26F5D0CA00030087 /* Assets.xcassets */,
@@ -174,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				6E64492F26F5D29D00030087 /* NewsModel.swift */,
+				6E67228B26F711AC001D79EA /* CoreDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -194,12 +204,25 @@
 			path = "API Service";
 			sourceTree = "<group>";
 		};
-		6E64492B26F5D13C00030087 /* Controllers */ = {
+		6E64492B26F5D13C00030087 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6E6448F526F5D0C700030087 /* ViewController.swift */,
+				6ED9A9FE26F90B5300D0DBA8 /* DisplayListView */,
+				6E42735E26F6153500DAE9F9 /* TableViewCells */,
+				6E6448F526F5D0C700030087 /* NewsListViewController.swift */,
+				6E67229326F77181001D79EA /* NewsWebViewController.swift */,
+				6E67229C26F79F5F001D79EA /* AnimationViewController.swift */,
 			);
-			path = Controllers;
+			path = View;
+			sourceTree = "<group>";
+		};
+		6ED9A9FE26F90B5300D0DBA8 /* DisplayListView */ = {
+			isa = PBXGroup;
+			children = (
+				6E6722B926F7CC66001D79EA /* DisplayListView.swift */,
+				6E6722BE26F7CC84001D79EA /* DisplayListView.xib */,
+			);
+			path = DisplayListView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E64490126F5D0CA00030087 /* LaunchScreen.storyboard in Resources */,
+				6E6722BF26F7CC84001D79EA /* DisplayListView.xib in Resources */,
 				6E6448FE26F5D0CA00030087 /* Assets.xcassets in Resources */,
 				6E42736026F6157800DAE9F9 /* NewsTableViewCell.xib in Resources */,
 				6E42737326F658E300DAE9F9 /* close.png in Resources */,
@@ -336,9 +360,13 @@
 			files = (
 				6E42735726F6036900DAE9F9 /* NewsViewModel.swift in Sources */,
 				6E42736526F6159A00DAE9F9 /* NewsTableViewCell.swift in Sources */,
+				6E67228C26F711AC001D79EA /* CoreDataModel.swift in Sources */,
 				6E64493026F5D29D00030087 /* NewsModel.swift in Sources */,
 				6E42735126F6015700DAE9F9 /* APIService.swift in Sources */,
-				6E6448F626F5D0C700030087 /* ViewController.swift in Sources */,
+				6E6448F626F5D0C700030087 /* NewsListViewController.swift in Sources */,
+				6E67229426F77181001D79EA /* NewsWebViewController.swift in Sources */,
+				6E6722BA26F7CC66001D79EA /* DisplayListView.swift in Sources */,
+				6E67229D26F79F5F001D79EA /* AnimationViewController.swift in Sources */,
 				6E6448F226F5D0C700030087 /* AppDelegate.swift in Sources */,
 				6E6448FC26F5D0C700030087 /* CodingTest.xcdatamodeld in Sources */,
 			);

@@ -15,8 +15,9 @@ class APIService :  NSObject {
         URLSession.shared.dataTask(with: sourcesURL) { (data, urlResponse, error) in
             if let data = data {
                 let jsonDecoder = JSONDecoder()
+                //use if let
                 let newsData = try! jsonDecoder.decode(News.self, from: data)
-                    completion(newsData)
+                completion(newsData)
             }
         }.resume()
     }
