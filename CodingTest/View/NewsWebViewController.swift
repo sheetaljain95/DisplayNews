@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class NewsWebViewController: UIViewController {
+class NewsWebViewController: UIViewController, WKNavigationDelegate {
     var newsTitle = String()
     var newsURL = String()
     
@@ -16,7 +16,8 @@ class NewsWebViewController: UIViewController {
     @IBOutlet var newstitle: UILabel!
     @IBOutlet var viewForUrl: UIView!
     @IBOutlet var newsWebView: WKWebView!
-    
+    @IBOutlet var loader: UILabel!
+
     @IBAction func closeButtonClicked(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
@@ -30,15 +31,27 @@ class NewsWebViewController: UIViewController {
         guard let link = URL(string:newsURL) else { return  }
         let request = URLRequest(url: link)
         newsWebView.load(request)
+        newsWebView.navigationDelegate = self
     }
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
+    
     func createUI() {
         newstitle.font = UIFont.systemFont(ofSize: 14.0)
         newstitle.textColor = .white
         newsWebView.backgroundColor = .black
+        newsWebView.isOpaque = false
         self.view.backgroundColor = .black
+        loader.textColor = .white
+        if (newsURL == nil) {
+            loader.text = "Page Link is not available"
+        }
     }
     
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        loader.isHidden = true
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
+

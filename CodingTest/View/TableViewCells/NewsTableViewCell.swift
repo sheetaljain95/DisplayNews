@@ -43,7 +43,7 @@ class NewsTableViewCell : UITableViewCell {
     
     
     func createUI(){
-        newsView.backgroundColor = UIColor.darkGray
+        newsView.backgroundColor = UIColor(red: 37/255, green: 37/255, blue: 37/255, alpha: 1)
         newsView.layer.cornerRadius = 5
         newsContent.textColor = .white
         newsContent.font = UIFont.systemFont(ofSize: 12.0)
@@ -58,6 +58,7 @@ class NewsTableViewCell : UITableViewCell {
         fullNews.titleLabel?.font =  UIFont.boldSystemFont(ofSize: 14.0)
         newsImage.contentMode = .scaleAspectFill
         newsImage.layer.cornerRadius = 5
+        newsContent.textColor = .lightGray
         
     }
     
