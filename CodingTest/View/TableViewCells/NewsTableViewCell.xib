@@ -89,7 +89,9 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="author" destination="Cw4-gl-BQw" id="Q4S-GE-izi"/>
+                <outlet property="authorHeightConstraint" destination="TA4-mU-MKD" id="FO5-ie-AFx"/>
                 <outlet property="fullNews" destination="hLz-XD-uW1" id="K6N-jR-cBV"/>
+                <outlet property="imageHeightConstraint" destination="91O-hY-XsT" id="vkg-mv-yVd"/>
                 <outlet property="newsContent" destination="ZsK-Vm-B4K" id="H8H-px-Xi6"/>
                 <outlet property="newsImage" destination="IXN-LK-agA" id="x1R-1z-o8E"/>
                 <outlet property="newsView" destination="RZv-T4-SqZ" id="iiU-z7-21e"/>

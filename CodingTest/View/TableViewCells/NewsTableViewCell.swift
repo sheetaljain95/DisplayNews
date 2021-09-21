@@ -25,6 +25,8 @@ class NewsTableViewCell : UITableViewCell {
     @IBOutlet var author: UILabel!
     @IBOutlet var newsView: UIView!
     
+    @IBOutlet var authorHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var imageHeightConstraint: NSLayoutConstraint!
     var cellNewsTitle : String?
     var cellNewsURL : String?
     var delegate: SeeNewsDelegate!
@@ -62,15 +64,19 @@ class NewsTableViewCell : UITableViewCell {
     func updateCell(news: NewsCoreData) {
         title.text = news.title
         newsContent.text = news.articleDescription
-        if (news.urlToImage != nil) {
-            self.newsImage.sd_setImage(with: URL(string: news.urlToImage!))
+        if let newsURL = news.urlToImage {
+            self.newsImage.sd_setImage(with: URL(string: newsURL))
         } else {
             newsImage.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint(item: newsImage!, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 0).isActive = true        }
-        author.text = news.author
-        if (news.author == nil) {
+            imageHeightConstraint.constant = 0
+        }
+        if let newsAuthor = news.author {
+            author.text = newsAuthor
+            authorHeightConstraint.constant = 0
+        }
+        else {
             author.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint(item: author!, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 0).isActive = true
+           
         }
     }
 }

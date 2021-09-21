@@ -11,12 +11,12 @@ class NewsListViewController: UIViewController,UITableViewDelegate, UITableViewD
     
     @IBOutlet var topView: UIView!
     @IBOutlet weak var newTableView: UITableView!
-    private var newsViewModel : NewsViewModel!
+    private var newsViewModel : NewsViewModel?
     private let newscell = "NewsTableViewCell"
     
     // MARK: - Table view Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.newsViewModel.newsData?.count ?? 0
+        return self.newsViewModel?.newsData?.count ?? 0
     }
     
     @IBAction func closeButtonClicked(_ sender: Any) {
@@ -26,9 +26,9 @@ class NewsListViewController: UIViewController,UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: newscell, for: indexPath) as! NewsTableViewCell
         cell.delegate = self
-        cell.cellNewsTitle = self.newsViewModel.newsData?[indexPath.row].title
-        cell.cellNewsURL = self.newsViewModel.newsData?[indexPath.row].url
-        cell.updateCell(news: (self.newsViewModel.newsData?[indexPath.row])!)
+        cell.cellNewsTitle = self.newsViewModel?.newsData?[indexPath.row].title
+        cell.cellNewsURL = self.newsViewModel?.newsData?[indexPath.row].url
+        cell.updateCell(news: (self.newsViewModel?.newsData?[indexPath.row])!)
         cell.backgroundColor = .black
         cell.selectionStyle = .none
         return cell
@@ -62,7 +62,7 @@ class NewsListViewController: UIViewController,UITableViewDelegate, UITableViewD
     
     func uiUpdate(){
         self.newsViewModel =  NewsViewModel()
-        self.newsViewModel.bindNewsViewModelToController = {
+        self.newsViewModel!.bindNewsViewModelToController = {
             self.updateDataSource()
         }
     }
@@ -81,10 +81,14 @@ class NewsListViewController: UIViewController,UITableViewDelegate, UITableViewD
 extension NewsListViewController: SeeNewsDelegate {
     func didTapButton(newsTitle: String?, newsURL: String?) {
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewsWebViewController") as? NewsWebViewController
-        vc!.newsTitle = newsTitle!
-        if (newsURL != nil) {
-            vc!.newsURL = newsURL!
+        if let newstitle = newsTitle {
+            vc!.newsTitle = newstitle
         }
-        self.navigationController?.pushViewController(vc!, animated: true)
+        if let newsurl = newsURL {
+            vc!.newsURL = newsurl
+        }
+        DispatchQueue.main.async {
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }
     }
 }

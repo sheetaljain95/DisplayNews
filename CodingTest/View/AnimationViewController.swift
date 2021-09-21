@@ -13,21 +13,24 @@ class AnimationViewController: UIViewController, ButtonTappedDelegate {
     @IBOutlet var widthConstraint: NSLayoutConstraint!
     @IBOutlet var heightConstraint: NSLayoutConstraint!
     @IBOutlet var animationView: UIView!
+    var backgroundView: DisplayListView!
+    var backgroundViewLeading: NSLayoutConstraint!
+    var backgroundViewTrailing: NSLayoutConstraint!
+    var backgroundViewTop: NSLayoutConstraint!
+    var backgroundViewBottom: NSLayoutConstraint!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: true)
         createUI()
-        let gesture = UITapGestureRecognizer(target: self, action: Selector(("buttonClicked:")))
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped(_:)))
         self.animationView.addGestureRecognizer(gesture)
     }
     
-    
-    
-    @objc func buttonClicked(_ sender:UITapGestureRecognizer){
+    @objc func viewTapped(_ sender:UITapGestureRecognizer){
         if (self.widthConstraint.constant == 140) {
-            UIView.animate(withDuration: 1.0, delay: 0.1, options: .curveEaseOut, animations: {
-                self.loadNib()
+            UIView.animate(withDuration: 5.0, delay: 0.1, options: .curveEaseOut, animations: {
+                self.expandBackgroundView()
             } , completion: { finished in
                 print("Animation!")
             })
@@ -46,25 +49,37 @@ class AnimationViewController: UIViewController, ButtonTappedDelegate {
         }
     }
     
-    func loadNib() {
+    func expandBackgroundView() {
         DispatchQueue.main.async {
-            //var displayview = DisplayListView()
-            let displayview = Bundle.main.loadNibNamed("DisplayListView", owner: nil, options: nil)![0] as! UIView as! DisplayListView
-            displayview.delegate = self
-            self.view.addSubview(displayview)
-            displayview.translatesAutoresizingMaskIntoConstraints = false
-            let horizontalConstraint = displayview.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
-            let verticalConstraint = displayview.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
-            let widthConstraint = displayview.widthAnchor.constraint(equalToConstant: self.view.frame.size.width)
-            let heightConstraint = displayview.heightAnchor.constraint(equalToConstant: self.view.frame.size.height)
-            self.view.addConstraints([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
-            displayview.layoutIfNeeded()
+            self.backgroundView.translatesAutoresizingMaskIntoConstraints = false
+            self.animationView.translatesAutoresizingMaskIntoConstraints = false
+            self.centreXConstraint.isActive = false
+            self.widthConstraint.isActive = false
+            self.heightConstraint.isActive = false
+            self.animationView.isHidden = true
+            self.backgroundViewLeading = self.backgroundView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
+            self.backgroundViewTrailing = self.backgroundView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+            self.backgroundViewTop = self.backgroundView.topAnchor.constraint(equalTo: self.view.topAnchor)
+            self.backgroundViewBottom = self.backgroundView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            NSLayoutConstraint.activate([self.backgroundViewLeading, self.backgroundViewLeading, self.backgroundViewLeading, self.backgroundViewLeading])
+            self.view.bringSubviewToFront(self.backgroundView)
+            self.animationView.isHidden = true
+            self.backgroundView.layoutIfNeeded()
             self.view.layoutIfNeeded()
         }
     }
     
     func createUI(){
         animationView.layer.cornerRadius = 6
+        backgroundView = DisplayListView()
+        self.view.addSubview(backgroundView)
+        //self.view.bringSubviewToFront(animationView)
+        /*backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundViewLeading = backgroundView.leadingAnchor.constraint(equalTo: animationView.leadingAnchor)
+        backgroundViewTrailing = backgroundView.trailingAnchor.constraint(equalTo: animationView.trailingAnchor)
+        backgroundViewTop = backgroundView.topAnchor.constraint(equalTo: animationView.topAnchor)
+        backgroundViewBottom = backgroundView.bottomAnchor.constraint(equalTo: animationView.bottomAnchor)
+        NSLayoutConstraint.activate([backgroundViewLeading, backgroundViewLeading, backgroundViewLeading, backgroundViewLeading])*/
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

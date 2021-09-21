@@ -11,13 +11,11 @@ import CoreData
 
 class CoreDataModel : NSObject {
     
-    private var newsViewModel : NewsViewModel!
-    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
+    let entityName = "NewsArticle"
     func createData(news: Array<Any>) {
         let managedContext = appDelegate.persistentContainer.viewContext
-        let newsEntity = NSEntityDescription.entity(forEntityName: "NewsArticle", in: managedContext)!
+        let newsEntity = NSEntityDescription.entity(forEntityName: entityName, in: managedContext)!
         var id = 1
         for item in news {
             let entry = item as? Article
@@ -31,7 +29,6 @@ class CoreDataModel : NSObject {
             newsObject.setValue(entry?.content, forKey: "content")
             newsObject.setValue(id, forKey: "id")
             id = id + 1
-            
         }
         do {
             try managedContext.save()
@@ -43,8 +40,8 @@ class CoreDataModel : NSObject {
     
     func retreiveDataWithID() -> NewsCoreData? {
         let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "NewsArticle")
-        var latestRecord : NewsCoreData!
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        var latestRecord : NewsCoreData?
         fetchRequest.predicate = NSPredicate(
             format: "id = 1"
         )
@@ -71,7 +68,7 @@ class CoreDataModel : NSObject {
     
     func retreiveData() -> [NewsCoreData]{
         let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "NewsArticle")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         do {
             let result = try managedContext.fetch(fetchRequest)
             for data in result as! [NSManagedObject] {
