@@ -28,7 +28,7 @@ class NewsTableViewCell : UITableViewCell {
     var cellNewsTitle : String?
     var cellNewsURL : String?
     var delegate: SeeNewsDelegate!
-
+    
     // MARK: - Methods
     @IBAction func seeFullNews(_ sender: Any) {
         delegate.didTapButton(newsTitle: cellNewsTitle, newsURL: cellNewsURL)
@@ -39,7 +39,7 @@ class NewsTableViewCell : UITableViewCell {
         createUI()
     }
     
-  
+    
     func createUI(){
         newsView.backgroundColor = UIColor.darkGray
         newsView.layer.cornerRadius = 5
@@ -56,10 +56,10 @@ class NewsTableViewCell : UITableViewCell {
         fullNews.titleLabel?.font =  UIFont.boldSystemFont(ofSize: 14.0)
         newsImage.contentMode = .scaleAspectFill
         newsImage.layer.cornerRadius = 5
-
+        
     }
     
-    func updateCell(news: Article) {
+    func updateCell(news: NewsCoreData) {
         title.text = news.title
         newsContent.text = news.articleDescription
         if (news.urlToImage != nil) {

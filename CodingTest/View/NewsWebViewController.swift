@@ -32,7 +32,7 @@ class NewsWebViewController: UIViewController {
         newsWebView.load(request)
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
-          return .lightContent
+        return .lightContent
     }
     func createUI() {
         newstitle.font = UIFont.systemFont(ofSize: 14.0)

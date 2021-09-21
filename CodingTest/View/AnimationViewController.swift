@@ -68,7 +68,7 @@ class AnimationViewController: UIViewController, ButtonTappedDelegate {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-          return .darkContent
+        return .darkContent
     }
     
     func didTapButton() {

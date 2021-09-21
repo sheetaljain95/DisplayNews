@@ -10,7 +10,7 @@ import Foundation
 class NewsViewModel : NSObject {
     
     private var apiService : APIService!
-    private(set) var newsData : News? {
+    private(set) var newsData : [NewsCoreData]? {
         didSet {
             self.bindNewsViewModelToController()
         }
@@ -22,7 +22,7 @@ class NewsViewModel : NSObject {
         self.apiService =  APIService()
         callFuncToGetNewsData()
     }
-
+    
     func callFuncToGetNewsData() {
         self.apiService.apiToGetNewsData { (newsData) in
             self.newsData = newsData

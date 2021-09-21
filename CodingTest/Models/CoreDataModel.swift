@@ -12,7 +12,7 @@ import CoreData
 class CoreDataModel : NSObject {
     
     private var newsViewModel : NewsViewModel!
-
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     func createData(news: Array<Any>) {
@@ -31,7 +31,7 @@ class CoreDataModel : NSObject {
             newsObject.setValue(entry?.content, forKey: "content")
             newsObject.setValue(id, forKey: "id")
             id = id + 1
-
+            
         }
         do {
             try managedContext.save()
@@ -59,7 +59,7 @@ class CoreDataModel : NSObject {
                 let urlToImage = data.value(forKey: "urlToImage") as? String
                 let content = data.value(forKey: "title") as? String
                 let id = data.value(forKey: "id") as? Int
-
+                
                 latestRecord = NewsCoreData(author: author, title: title, articleDescription: articleDescription, url: url, urlToImage: urlToImage, publishedAt: publishedAt, content: content, id: id)
             }
         }
@@ -83,7 +83,7 @@ class CoreDataModel : NSObject {
                 let urlToImage = data.value(forKey: "urlToImage") as? String
                 let content = data.value(forKey: "title") as? String
                 let id = data.value(forKey: "id") as? Int
-
+                
                 let dataToAppend = NewsCoreData(author: author, title: title, articleDescription: articleDescription, url: url, urlToImage: urlToImage, publishedAt: publishedAt, content: content, id: id)
                 coreDataArray.append(dataToAppend)
                 

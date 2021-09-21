@@ -16,8 +16,9 @@ class NewsListViewController: UIViewController,UITableViewDelegate, UITableViewD
     
     // MARK: - Table view Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.newsViewModel.newsData?.articles?.count ?? 0
+        return self.newsViewModel.newsData?.count ?? 0
     }
+    
     @IBAction func closeButtonClicked(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
@@ -25,9 +26,9 @@ class NewsListViewController: UIViewController,UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: newscell, for: indexPath) as! NewsTableViewCell
         cell.delegate = self
-        cell.cellNewsTitle = self.newsViewModel.newsData?.articles?[indexPath.row].title
-        cell.cellNewsURL = self.newsViewModel.newsData?.articles?[indexPath.row].url
-        cell.updateCell(news: (self.newsViewModel.newsData?.articles?[indexPath.row])!)
+        cell.cellNewsTitle = self.newsViewModel.newsData?[indexPath.row].title
+        cell.cellNewsURL = self.newsViewModel.newsData?[indexPath.row].url
+        cell.updateCell(news: (self.newsViewModel.newsData?[indexPath.row])!)
         cell.backgroundColor = .black
         cell.selectionStyle = .none
         return cell
@@ -73,12 +74,12 @@ class NewsListViewController: UIViewController,UITableViewDelegate, UITableViewD
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-          return .lightContent
+        return .lightContent
     }
 }
 
 extension NewsListViewController: SeeNewsDelegate {
-        func didTapButton(newsTitle: String?, newsURL: String?) {
+    func didTapButton(newsTitle: String?, newsURL: String?) {
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewsWebViewController") as? NewsWebViewController
         vc!.newsTitle = newsTitle!
         if (newsURL != nil) {
