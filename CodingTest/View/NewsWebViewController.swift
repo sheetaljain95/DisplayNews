@@ -9,18 +9,24 @@ import UIKit
 import WebKit
 
 class NewsWebViewController: UIViewController, WKNavigationDelegate {
-    var newsTitle = String()
-    var newsURL = String()
     
+    // MARK: - Outlets
     @IBOutlet var close: UIButton!
     @IBOutlet var newstitle: UILabel!
     @IBOutlet var viewForUrl: UIView!
     @IBOutlet var newsWebView: WKWebView!
     @IBOutlet var loader: UILabel!
-
+    
+    // MARK: - Actions
     @IBAction func closeButtonClicked(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
+    
+    // MARK: - Variables
+    var newsTitle = String()
+    var newsURL = String()
+    
+    // MARK: - View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         createUI()
@@ -34,6 +40,7 @@ class NewsWebViewController: UIViewController, WKNavigationDelegate {
         newsWebView.navigationDelegate = self
     }
     
+    // MARK: - Methods
     func createUI() {
         newstitle.font = UIFont.systemFont(ofSize: 14.0)
         newstitle.textColor = .white
@@ -50,6 +57,7 @@ class NewsWebViewController: UIViewController, WKNavigationDelegate {
         loader.isHidden = true
     }
     
+    // MARK: - Status Bar
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }

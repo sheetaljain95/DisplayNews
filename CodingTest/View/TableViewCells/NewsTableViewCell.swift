@@ -17,16 +17,16 @@ class NewsTableViewCell : UITableViewCell {
     
     
     // MARK: - Outlets
-    
     @IBOutlet var title: UILabel!
     @IBOutlet var fullNews: UIButton!
     @IBOutlet var newsContent: UILabel!
     @IBOutlet var newsImage: UIImageView!
     @IBOutlet var author: UILabel!
     @IBOutlet var newsView: UIView!
-    
     @IBOutlet var authorHeightConstraint: NSLayoutConstraint!
     @IBOutlet var imageHeightConstraint: NSLayoutConstraint!
+    
+    // MARK: - Variables
     var cellNewsTitle : String?
     var cellNewsURL : String?
     var delegate: SeeNewsDelegate!
@@ -40,7 +40,6 @@ class NewsTableViewCell : UITableViewCell {
         super.awakeFromNib()
         createUI()
     }
-    
     
     func createUI(){
         newsView.backgroundColor = UIColor(red: 37/255, green: 37/255, blue: 37/255, alpha: 1)
@@ -59,7 +58,6 @@ class NewsTableViewCell : UITableViewCell {
         newsImage.contentMode = .scaleAspectFill
         newsImage.layer.cornerRadius = 5
         newsContent.textColor = .lightGray
-        
     }
     
     func updateCell(news: NewsCoreData) {
@@ -77,7 +75,6 @@ class NewsTableViewCell : UITableViewCell {
         }
         else {
             author.translatesAutoresizingMaskIntoConstraints = false
-           
         }
     }
 }

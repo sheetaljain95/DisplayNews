@@ -9,18 +9,24 @@ import UIKit
 
 class NewsListViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
+    // MARK: - Outlets
     @IBOutlet var topView: UIView!
     @IBOutlet weak var newTableView: UITableView!
     private var newsViewModel : NewsViewModel?
     private let newscell = "NewsTableViewCell"
+    
+    // MARK: - Actions
+    @IBAction func closeButtonClicked(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     
     // MARK: - Table view Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.newsViewModel?.newsData?.count ?? 0
     }
     
-    @IBAction func closeButtonClicked(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -34,9 +40,6 @@ class NewsListViewController: UIViewController,UITableViewDelegate, UITableViewD
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
     
     // MARK: - view Methods
     
@@ -63,21 +66,23 @@ class NewsListViewController: UIViewController,UITableViewDelegate, UITableViewD
     func uiUpdate(){
         self.newsViewModel =  NewsViewModel()
         self.newsViewModel!.bindNewsViewModelToController = {
-            self.updateDataSource()
+            self.updateData()
         }
     }
     
-    func updateDataSource(){
+    func updateData(){
         DispatchQueue.main.async {
             self.newTableView.reloadData()
         }
     }
     
+    // MARK: - Status Bar 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
 }
 
+// MARK: - Extension
 extension NewsListViewController: SeeNewsDelegate {
     func didTapButton(newsTitle: String?, newsURL: String?) {
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewsWebViewController") as? NewsWebViewController

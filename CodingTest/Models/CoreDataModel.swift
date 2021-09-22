@@ -9,10 +9,12 @@ import Foundation
 import UIKit
 import CoreData
 
-class CoreDataModel : NSObject {
+open class CoreDataModel : NSObject {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let entityName = "NewsArticle"
+    
+    
     func createData(news: Array<Any>) {
         let managedContext = appDelegate.persistentContainer.viewContext
         let newsEntity = NSEntityDescription.entity(forEntityName: entityName, in: managedContext)!

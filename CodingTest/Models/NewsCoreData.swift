@@ -9,7 +9,7 @@ import Foundation
 
 var coreDataArray = [NewsCoreData]()
 
-struct NewsCoreData {
+struct NewsCoreData : Equatable {
     let author: String?
     let title: String?
     let articleDescription: String?
@@ -19,3 +19,4 @@ struct NewsCoreData {
     let content: String?
     let id : Int?
 }
+

@@ -7,207 +7,79 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FBA662D5-1F6C-4BC3-A5C1-47DEED0C00EC"
+            uuid = "2EF6B00E-B2E6-4B26-8746-1AEF8C6E5655"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CodingTest/API Service/APIService.swift"
+            filePath = "CodingTestTests/TestCoreDataStack.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "apiToGetNewsData(completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FBA662D5-1F6C-4BC3-A5C1-47DEED0C00EC - 8684c8e7e11a05c8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CodingTest.APIService.apiToGetNewsData(completion: (Swift.Array&lt;CodingTest.NewsCoreData&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "CodingTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sheetaljain/Desktop/CodingTest/CodingTest/API%20Service/APIService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "181">
-               </Location>
-               <Location
-                  uuid = "FBA662D5-1F6C-4BC3-A5C1-47DEED0C00EC - d58786722bb78789"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CodingTest.APIService.apiToGetNewsData(completion: (Swift.Array&lt;CodingTest.NewsCoreData&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "CodingTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sheetaljain/Desktop/CodingTest/CodingTest/API%20Service/APIService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "384">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7403B771-EAB3-4A86-93FA-61453C83E840"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CodingTest/API Service/APIService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "apiToGetNewsData(completion:)"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "testCoreDataAndApiResponse()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "20CE42EB-AFF6-4739-87C6-1D5E3C8301FF"
+            uuid = "A104F168-ED37-4403-A7F0-1583C863E88D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CodingTest/API Service/APIService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "apiToGetNewsData(completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "20CE42EB-AFF6-4739-87C6-1D5E3C8301FF - 8684c8e7e11a00e2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CodingTest.APIService.apiToGetNewsData(completion: (Swift.Array&lt;CodingTest.NewsCoreData&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "CodingTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sheetaljain/Desktop/CodingTest/CodingTest/API%20Service/APIService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "656">
-               </Location>
-               <Location
-                  uuid = "20CE42EB-AFF6-4739-87C6-1D5E3C8301FF - d58786722bb782a3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CodingTest.APIService.apiToGetNewsData(completion: (Swift.Array&lt;CodingTest.NewsCoreData&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "CodingTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sheetaljain/Desktop/CodingTest/CodingTest/API%20Service/APIService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "4472">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "62F762C2-2AC8-41F3-A571-532E940116F7"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CodingTest/API Service/APIService.swift"
+            filePath = "CodingTestTests/TestCoreDataStack.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
             endingLineNumber = "37"
-            landmarkName = "apiToGetNewsData(completion:)"
+            landmarkName = "setUp()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7CDED747-0C6C-4AB6-9C65-8C074758770C"
+            uuid = "ECFC8F0F-3DA9-40BF-AABC-FE54A1FE6EE0"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingTest/View/AnimationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "expandBackgroundView()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EBC716B3-8E5B-4F0C-BFAB-13BE8A4347AC"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CodingTest/View/AnimationViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "viewTapped(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1309B2A6-5895-4218-8F54-A8A5354184D1"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CodingTest/View/DisplayListView/DisplayListView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "commonInit()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "1309B2A6-5895-4218-8F54-A8A5354184D1 - 74247c456237003f"
+                  uuid = "ECFC8F0F-3DA9-40BF-AABC-FE54A1FE6EE0 - aa9c69be89430d45"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "CodingTest.DisplayListView.commonInit() -&gt; ()"
+                  symbolName = "CodingTest.AnimationViewController.viewTapped(__C.UITapGestureRecognizer) -&gt; ()"
                   moduleName = "CodingTest"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sheetaljain/Desktop/CodingTest/CodingTest/View/DisplayListView/DisplayListView.swift"
+                  urlString = "file:///Users/sheetaljain/Desktop/CodingTest/CodingTest/View/AnimationViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "93">
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "964">
                </Location>
                <Location
-                  uuid = "1309B2A6-5895-4218-8F54-A8A5354184D1 - 74247c456237003f"
+                  uuid = "ECFC8F0F-3DA9-40BF-AABC-FE54A1FE6EE0 - 283203054d223b24"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "CodingTest.DisplayListView.commonInit() -&gt; ()"
+                  symbolName = "closure #3 () -&gt; () in CodingTest.AnimationViewController.viewTapped(__C.UITapGestureRecognizer) -&gt; ()"
                   moduleName = "CodingTest"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sheetaljain/Desktop/CodingTest/CodingTest/View/DisplayListView/DisplayListView.swift"
+                  urlString = "file:///Users/sheetaljain/Desktop/CodingTest/CodingTest/View/AnimationViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
                   endingLineNumber = "43"
-                  offsetFromSymbolStart = "1072">
+                  offsetFromSymbolStart = "55">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -215,81 +87,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3D1FF671-927E-4E25-A5F4-014911204BAE"
+            uuid = "3101B4A8-8303-456B-9676-AD79AB99BE6E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CodingTest/View/TableViewCells/NewsTableViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "seeFullNews(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "471C333A-62FD-4E00-BB72-F0DF9BA478DE"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CodingTest/View/NewsListViewController.swift"
+            filePath = "CodingTest/View/AnimationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
             endingLineNumber = "83"
-            landmarkName = "didTapButton(newsTitle:newsURL:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9CDC1C8D-4E58-4872-B924-056E0EBAF6E1"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CodingTest/View/NewsListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "didTapButton(newsTitle:newsURL:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "37A0B640-AA61-4134-95C5-88F2043889DE"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CodingTest/View/NewsListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "didTapButton(newsTitle:newsURL:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DF6315FC-97AD-4A2A-A125-9ADCD2D7FA71"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CodingTest/View/NewsWebViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "webView(_:didCommit:)"
-            landmarkType = "7">
+            landmarkName = "preferredStatusBarStyle"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "3101B4A8-8303-456B-9676-AD79AB99BE6E - e9f9f6820e98a206"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CodingTest.AnimationViewController.didTapButton() -&gt; ()"
+                  moduleName = "CodingTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sheetaljain/Desktop/CodingTest/CodingTest/View/AnimationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "73">
+               </Location>
+               <Location
+                  uuid = "3101B4A8-8303-456B-9676-AD79AB99BE6E - e9f9f6820e98a206"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CodingTest.AnimationViewController.didTapButton() -&gt; ()"
+                  moduleName = "CodingTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sheetaljain/Desktop/CodingTest/CodingTest/View/AnimationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "529">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
