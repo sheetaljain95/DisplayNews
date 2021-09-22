@@ -7,37 +7,44 @@
 
 import UIKit
 
-class NewsListViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+class NewsListViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, ButtonTappedDelegate {
     
     // MARK: - Outlets
     @IBOutlet var topView: UIView!
     @IBOutlet weak var newTableView: UITableView!
     private var newsViewModel : NewsViewModel?
     private let newscell = "NewsTableViewCell"
+    private let firstCell = "NewsHeadingTableViewCell"
     
-    // MARK: - Actions
-    @IBAction func closeButtonClicked(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
     
     // MARK: - Table view Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.newsViewModel?.newsData?.count ?? 0
+        return self.newsViewModel?.newsData?.count ?? 0 + 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (indexPath.row == 0) {
+            return 128
+        } 
         return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: newscell, for: indexPath) as! NewsTableViewCell
-        cell.delegate = self
-        cell.cellNewsTitle = self.newsViewModel?.newsData?[indexPath.row].title
-        cell.cellNewsURL = self.newsViewModel?.newsData?[indexPath.row].url
-        cell.updateCell(news: (self.newsViewModel?.newsData?[indexPath.row])!)
-        cell.backgroundColor = .black
-        cell.selectionStyle = .none
-        return cell
+        if (indexPath.row != 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: newscell, for: indexPath) as! NewsTableViewCell
+            cell.delegate = self
+            cell.cellNewsTitle = self.newsViewModel?.newsData?[indexPath.row].title
+            cell.cellNewsURL = self.newsViewModel?.newsData?[indexPath.row].url
+            cell.updateCell(news: (self.newsViewModel?.newsData?[indexPath.row])!)
+            cell.backgroundColor = .black
+            cell.selectionStyle = .none
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: firstCell, for: indexPath) as! NewsHeadingTableViewCell
+            cell.delegate = self
+            return cell
+            
+        }
     }
     
     
@@ -48,17 +55,19 @@ class NewsListViewController: UIViewController,UITableViewDelegate, UITableViewD
         navigationController?.setNavigationBarHidden(true, animated: true)
         createUI()
         uiUpdate()
-        let nib = UINib.init(nibName: newscell, bundle: nil)
-        self.newTableView.register(nib, forCellReuseIdentifier: newscell)
+        let newsnib = UINib.init(nibName: newscell, bundle: nil)
+        self.newTableView.register(newsnib, forCellReuseIdentifier: newscell)
+        let topnib = UINib.init(nibName: firstCell, bundle: nil)
+        self.newTableView.register(topnib, forCellReuseIdentifier: firstCell)
     }
     
     // MARK: - Methods
     
     func createUI(){
-        topView.layer.cornerRadius = 24
-        topView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        view.addSubview(topView)
-        self.view.backgroundColor = .black
+        /*topView.layer.cornerRadius = 24
+         topView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+         view.addSubview(topView)
+         self.view.backgroundColor = .black*/
         self.newTableView.backgroundColor = .black
         self.newTableView.separatorColor = UIColor.black
     }
@@ -69,6 +78,7 @@ class NewsListViewController: UIViewController,UITableViewDelegate, UITableViewD
             self.updateData()
         }
     }
+    
     
     func updateData(){
         DispatchQueue.main.async {
@@ -95,5 +105,11 @@ extension NewsListViewController: SeeNewsDelegate {
         DispatchQueue.main.async {
             self.navigationController?.pushViewController(vc!, animated: true)
         }
+    }
+}
+
+extension NewsListViewController: CloseButtonTappedDelegate {
+    func didTapButton() {
+        navigationController?.popViewController(animated: true)
     }
 }

@@ -65,16 +65,20 @@ class NewsTableViewCell : UITableViewCell {
         newsContent.text = news.articleDescription
         if let newsURL = news.urlToImage {
             self.newsImage.sd_setImage(with: URL(string: newsURL))
+            newsImage.translatesAutoresizingMaskIntoConstraints = false
+            imageHeightConstraint.constant = 160
         } else {
             newsImage.translatesAutoresizingMaskIntoConstraints = false
             imageHeightConstraint.constant = 0
         }
         if let newsAuthor = news.author {
             author.text = newsAuthor
-            authorHeightConstraint.constant = 0
+            author.translatesAutoresizingMaskIntoConstraints = false
+            authorHeightConstraint.constant = 16
         }
         else {
             author.translatesAutoresizingMaskIntoConstraints = false
+            authorHeightConstraint.constant = 0
         }
     }
 }
