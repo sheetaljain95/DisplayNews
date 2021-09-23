@@ -96,12 +96,8 @@
                                             <wkPreferences key="preferences"/>
                                         </wkWebViewConfiguration>
                                     </wkWebView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading.." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oty-Mo-KtU">
-                                        <rect key="frame" x="132" y="329" width="150" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="24" id="dBj-dw-sr0"/>
-                                            <constraint firstAttribute="width" constant="150" id="hOI-Qu-V5N"/>
-                                        </constraints>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading.." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oty-Mo-KtU">
+                                        <rect key="frame" x="16" y="331" width="382" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -109,10 +105,12 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="oty-Mo-KtU" firstAttribute="leading" secondItem="x6H-9n-Hzy" secondAttribute="leading" constant="16" id="Bff-gE-qfR"/>
                                     <constraint firstAttribute="trailing" secondItem="SrM-tC-G25" secondAttribute="trailing" id="KjE-dy-95U"/>
                                     <constraint firstItem="oty-Mo-KtU" firstAttribute="centerX" secondItem="x6H-9n-Hzy" secondAttribute="centerX" id="Sje-YH-LZz"/>
                                     <constraint firstItem="SrM-tC-G25" firstAttribute="leading" secondItem="x6H-9n-Hzy" secondAttribute="leading" id="T1X-8t-jgZ"/>
                                     <constraint firstAttribute="bottom" secondItem="SrM-tC-G25" secondAttribute="bottom" id="YSZ-0Z-HhV"/>
+                                    <constraint firstAttribute="trailing" secondItem="oty-Mo-KtU" secondAttribute="trailing" constant="16" id="owk-wa-hIu"/>
                                     <constraint firstItem="SrM-tC-G25" firstAttribute="top" secondItem="x6H-9n-Hzy" secondAttribute="top" id="wEM-ir-0UJ"/>
                                     <constraint firstItem="oty-Mo-KtU" firstAttribute="centerY" secondItem="x6H-9n-Hzy" secondAttribute="centerY" id="wRg-m1-BMa"/>
                                 </constraints>

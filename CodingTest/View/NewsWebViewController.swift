@@ -48,14 +48,19 @@ class NewsWebViewController: UIViewController, WKNavigationDelegate {
         newsWebView.isOpaque = false
         self.view.backgroundColor = .black
         loader.textColor = .white
-        if (newsURL == nil) {
-            loader.text = "Page Link is not available"
-        }
     }
     
     // MARK: - WKWebView Methods
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         loader.isHidden = true
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        loader.text = error.localizedDescription
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        loader.text = error.localizedDescription
     }
     
     // MARK: - Status Bar
