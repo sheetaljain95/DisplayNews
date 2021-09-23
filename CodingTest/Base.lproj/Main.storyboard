@@ -52,7 +52,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J6F-mS-dud">
-                                <rect key="frame" x="0.0" y="44" width="414" height="136"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ga1-fG-rZe">
                                         <rect key="frame" x="8" y="8" width="32" height="32"/>
@@ -65,11 +65,8 @@
                                             <action selector="closeButtonClicked:" destination="MX4-RR-UQx" eventType="touchUpInside" id="fOs-35-Fmt"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ttile" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FzQ-Gk-25T">
-                                        <rect key="frame" x="16" y="48" width="382" height="72"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="72" id="HJl-nf-qTL"/>
-                                        </constraints>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FzQ-Gk-25T">
+                                        <rect key="frame" x="16" y="48" width="382" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -79,17 +76,17 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="FzQ-Gk-25T" secondAttribute="trailing" constant="16" id="Eob-Ea-2jk"/>
                                     <constraint firstItem="Ga1-fG-rZe" firstAttribute="top" secondItem="J6F-mS-dud" secondAttribute="top" constant="8" id="Mlc-Lb-PFP"/>
+                                    <constraint firstAttribute="bottom" secondItem="FzQ-Gk-25T" secondAttribute="bottom" constant="16" id="P0O-zx-pTC"/>
                                     <constraint firstItem="FzQ-Gk-25T" firstAttribute="top" secondItem="Ga1-fG-rZe" secondAttribute="bottom" constant="8" id="dnT-VC-MTh"/>
                                     <constraint firstItem="Ga1-fG-rZe" firstAttribute="leading" secondItem="J6F-mS-dud" secondAttribute="leading" constant="8" id="oeD-9F-HSq"/>
-                                    <constraint firstAttribute="height" constant="136" id="s1z-kY-5I9"/>
                                     <constraint firstItem="FzQ-Gk-25T" firstAttribute="leading" secondItem="J6F-mS-dud" secondAttribute="leading" constant="16" id="z6v-hS-AIE"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x6H-9n-Hzy">
-                                <rect key="frame" x="0.0" y="180" width="414" height="682"/>
+                                <rect key="frame" x="0.0" y="108" width="414" height="754"/>
                                 <subviews>
                                     <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SrM-tC-G25">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="682"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="754"/>
                                         <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <wkWebViewConfiguration key="configuration">
                                             <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -97,7 +94,7 @@
                                         </wkWebViewConfiguration>
                                     </wkWebView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading.." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oty-Mo-KtU">
-                                        <rect key="frame" x="16" y="331" width="382" height="20.5"/>
+                                        <rect key="frame" x="16" y="367" width="382" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
