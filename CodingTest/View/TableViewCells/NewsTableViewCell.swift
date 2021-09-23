@@ -55,7 +55,7 @@ class NewsTableViewCell : UITableViewCell {
         fullNews.backgroundColor = .gray
         fullNews.layer.cornerRadius = 5
         fullNews.titleLabel?.font =  UIFont.boldSystemFont(ofSize: 14.0)
-        newsImage.contentMode = .scaleAspectFill
+        newsImage.contentMode = .scaleAspectFit
         newsImage.layer.cornerRadius = 5
         newsContent.textColor = .lightGray
     }
@@ -67,6 +67,9 @@ class NewsTableViewCell : UITableViewCell {
             self.newsImage.sd_setImage(with: URL(string: newsURL))
             newsImage.translatesAutoresizingMaskIntoConstraints = false
             imageHeightConstraint.constant = 160
+            if (UIDevice.current.userInterfaceIdiom == .pad) {
+                imageHeightConstraint.constant = 320
+            }
         } else {
             newsImage.translatesAutoresizingMaskIntoConstraints = false
             imageHeightConstraint.constant = 0

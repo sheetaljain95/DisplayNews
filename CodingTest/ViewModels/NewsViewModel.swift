@@ -25,7 +25,7 @@ class NewsViewModel : NSObject {
     
     func callFuncToGetNewsData() {
         self.apiService.apiToGetNewsData { (newsData) in
-            let news = newsData.sorted(by: {$0.author ?? "" < $1.author ?? ""})
+            let news = newsData.sorted(by: {$0.author ?? "ZZ" < $1.author ?? "ZZ"})
             self.newsData = news
         }
     }
