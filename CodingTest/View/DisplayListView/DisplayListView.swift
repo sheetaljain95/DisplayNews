@@ -8,7 +8,6 @@
 import UIKit
 import Foundation
 
-
 protocol ButtonTappedDelegate {
     func didTapButton()
 }
@@ -45,6 +44,7 @@ class DisplayListView: UIView {
         self.addSubview(view)
     }
     
+    // MARK: - Actions
     @objc func labelClicked(_ sender:UITapGestureRecognizer) {
         delegate.didTapButton()
     }

@@ -14,7 +14,7 @@ open class CoreDataModel : NSObject {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let entityName = "NewsArticle"
     
-    
+    // MARK: - createData
     func createData(news: Array<Any>) {
         let managedContext = appDelegate.persistentContainer.viewContext
         let newsEntity = NSEntityDescription.entity(forEntityName: entityName, in: managedContext)!
@@ -40,6 +40,7 @@ open class CoreDataModel : NSObject {
         }
     }
     
+    // MARK: - retreiveDataWithID
     func retreiveDataWithID() -> NewsCoreData? {
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
@@ -68,6 +69,7 @@ open class CoreDataModel : NSObject {
         return latestRecord
     }
     
+    // MARK: - retreiveData
     func retreiveData() -> [NewsCoreData]{
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
@@ -85,7 +87,6 @@ open class CoreDataModel : NSObject {
                 
                 let dataToAppend = NewsCoreData(author: author, title: title, articleDescription: articleDescription, url: url, urlToImage: urlToImage, publishedAt: publishedAt, content: content, id: id)
                 coreDataArray.append(dataToAppend)
-                
             }
         } catch {
             print("Failed")
@@ -93,6 +94,7 @@ open class CoreDataModel : NSObject {
         return coreDataArray
     }
     
+    // MARK: - deleteData
     func deleteData(){
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "NewsArticle")

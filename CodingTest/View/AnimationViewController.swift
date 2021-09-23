@@ -22,7 +22,7 @@ class AnimationViewController: UIViewController, ButtonTappedDelegate {
     var backgroundViewTop: NSLayoutConstraint!
     var backgroundViewBottom: NSLayoutConstraint!
     
-    // MARK: - View Methods
+    // MARK: - View Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: true)
         createUI()

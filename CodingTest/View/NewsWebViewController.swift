@@ -26,7 +26,7 @@ class NewsWebViewController: UIViewController, WKNavigationDelegate {
     var newsTitle = String()
     var newsURL = String()
     
-    // MARK: - View Methods
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         createUI()
@@ -40,7 +40,7 @@ class NewsWebViewController: UIViewController, WKNavigationDelegate {
         newsWebView.navigationDelegate = self
     }
     
-    // MARK: - Methods
+    // MARK: - View Methods
     func createUI() {
         newstitle.font = UIFont.systemFont(ofSize: 14.0)
         newstitle.textColor = .white
@@ -53,6 +53,7 @@ class NewsWebViewController: UIViewController, WKNavigationDelegate {
         }
     }
     
+    // MARK: - WKWebView Methods
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         loader.isHidden = true
     }

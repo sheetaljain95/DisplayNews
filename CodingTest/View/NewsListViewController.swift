@@ -48,7 +48,7 @@ class NewsListViewController: UIViewController,UITableViewDelegate, UITableViewD
     }
     
     
-    // MARK: - view Methods
+    // MARK: - view Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +61,7 @@ class NewsListViewController: UIViewController,UITableViewDelegate, UITableViewD
         self.newTableView.register(topnib, forCellReuseIdentifier: firstCell)
     }
     
-    // MARK: - Methods
+    // MARK: - View Methods
     
     func createUI(){
         /*topView.layer.cornerRadius = 24
@@ -86,7 +86,7 @@ class NewsListViewController: UIViewController,UITableViewDelegate, UITableViewD
         }
     }
     
-    // MARK: - Status Bar 
+    // MARK: - Status Bar methods
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }

@@ -7,8 +7,10 @@
 
 import Foundation
 
+// MARK: - coreDataArray
 var coreDataArray = [NewsCoreData]()
 
+// MARK: - NewsCoreData
 struct NewsCoreData : Equatable {
     let author: String?
     let title: String?
