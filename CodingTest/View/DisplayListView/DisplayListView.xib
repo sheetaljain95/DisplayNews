@@ -31,8 +31,8 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="doO-xG-EoM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="0dj-SP-7vN"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="doO-xG-EoM" secondAttribute="bottom" constant="16" id="3iX-KB-V5f"/>
+                <constraint firstItem="doO-xG-EoM" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" multiplier="0.4" id="E6f-cw-Jf0"/>
+                <constraint firstItem="doO-xG-EoM" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" multiplier="1.5" id="G76-bV-0bD"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-146.37681159420291" y="-127.23214285714285"/>

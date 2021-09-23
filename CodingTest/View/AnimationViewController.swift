@@ -39,7 +39,6 @@ class AnimationViewController: UIViewController, ButtonTappedDelegate {
             UIView.animate(withDuration: 1.0, animations: {
                 self.expandBackgroundView()
             } , completion: { finished in
-                print("Animation!")
             })
         } else {
             self.animationView.translatesAutoresizingMaskIntoConstraints = false
@@ -57,11 +56,11 @@ class AnimationViewController: UIViewController, ButtonTappedDelegate {
     
     func expandBackgroundView() {
         backgroundView.isHidden = false
-        self.backgroundView.translatesAutoresizingMaskIntoConstraints = false
         self.animationView.translatesAutoresizingMaskIntoConstraints = false
-        let scaletransform = CGAffineTransform(scaleX: UIScreen.main.bounds.size.width/self.backgroundView.frame.size.width, y: UIScreen.main.bounds.size.height/self.backgroundView.frame.size.height)
+        let scaletransform = CGAffineTransform(scaleX: self.view.frame.size.width/self.backgroundView.frame.size.width, y: self.view.frame.size.height/self.backgroundView.frame.size.height)
         self.backgroundView.transform = scaletransform
-        //self.view.bringSubviewToFront(self.backgroundView)
+        self.backgroundView.displayList.transform = scaletransform.inverted()
+        self.view.bringSubviewToFront(self.backgroundView)
         self.animationView.isHidden = true
     }
     
@@ -75,8 +74,8 @@ class AnimationViewController: UIViewController, ButtonTappedDelegate {
         backgroundViewTrailing = backgroundView.trailingAnchor.constraint(equalTo: animationView.trailingAnchor)
         backgroundViewTop = backgroundView.topAnchor.constraint(equalTo: animationView.topAnchor)
         backgroundViewBottom = backgroundView.bottomAnchor.constraint(equalTo: animationView.bottomAnchor)
-        NSLayoutConstraint.activate([backgroundViewLeading, backgroundViewTrailing, backgroundViewTop, backgroundViewBottom])
         backgroundView.isHidden = true
+        NSLayoutConstraint.activate([backgroundViewLeading, backgroundViewTrailing, backgroundViewTop, backgroundViewBottom])
     }
 
     @objc func didTapButton() {

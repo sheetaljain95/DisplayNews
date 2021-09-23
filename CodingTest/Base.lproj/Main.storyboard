@@ -157,7 +157,7 @@
                         <viewLayoutGuide key="safeArea" id="R7S-r4-GVC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="uMR-nt-84A" firstAttribute="centerY" secondItem="R7S-r4-GVC" secondAttribute="centerY" id="3Bn-Vc-npC"/>
+                            <constraint firstItem="uMR-nt-84A" firstAttribute="centerY" secondItem="8Ye-Kf-OMb" secondAttribute="centerY" id="3Bn-Vc-npC"/>
                             <constraint firstItem="uMR-nt-84A" firstAttribute="leading" secondItem="R7S-r4-GVC" secondAttribute="leading" constant="20" id="V5L-ca-Vi3"/>
                         </constraints>
                     </view>

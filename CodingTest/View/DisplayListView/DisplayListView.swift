@@ -21,6 +21,7 @@ class DisplayListView: UIView {
         self.displayList.isUserInteractionEnabled = true
         let gesture = UITapGestureRecognizer(target: self, action: #selector(self.labelClicked(_:)))
         displayList.addGestureRecognizer(gesture)
+        displayList.translatesAutoresizingMaskIntoConstraints = false
     }
     
     override init(frame: CGRect) {
