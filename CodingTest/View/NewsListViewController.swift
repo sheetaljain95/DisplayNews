@@ -19,7 +19,8 @@ class NewsListViewController: UIViewController,UITableViewDelegate, UITableViewD
     
     // MARK: - Table view Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.newsViewModel?.newsData?.count ?? 0 + 1
+        let newsItems = self.newsViewModel?.newsData?.count ?? 0
+        return newsItems + 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -33,9 +34,9 @@ class NewsListViewController: UIViewController,UITableViewDelegate, UITableViewD
         if (indexPath.row != 0) {
             let cell = tableView.dequeueReusableCell(withIdentifier: newscell, for: indexPath) as! NewsTableViewCell
             cell.delegate = self
-            cell.cellNewsTitle = self.newsViewModel?.newsData?[indexPath.row].title
-            cell.cellNewsURL = self.newsViewModel?.newsData?[indexPath.row].url
-            cell.updateCell(news: (self.newsViewModel?.newsData?[indexPath.row])!)
+            cell.cellNewsTitle = self.newsViewModel?.newsData?[indexPath.row - 1].title
+            cell.cellNewsURL = self.newsViewModel?.newsData?[indexPath.row - 1].url
+            cell.updateCell(news: (self.newsViewModel?.newsData?[indexPath.row - 1])!)
             cell.backgroundColor = .black
             cell.selectionStyle = .none
             return cell
@@ -54,13 +55,15 @@ class NewsListViewController: UIViewController,UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: true)
         createUI()
-        uiUpdate()
         let newsnib = UINib.init(nibName: newscell, bundle: nil)
         self.newTableView.register(newsnib, forCellReuseIdentifier: newscell)
         let topnib = UINib.init(nibName: firstCell, bundle: nil)
         self.newTableView.register(topnib, forCellReuseIdentifier: firstCell)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        uiUpdate()
+    }
     // MARK: - View Methods
     
     func createUI(){
